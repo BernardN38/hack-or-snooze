@@ -160,6 +160,7 @@ class User {
 
 		let { user } = response.data;
 
+		getAndShowStoriesOnStart()
 		return new User(
 			{
 				username: user.username,
