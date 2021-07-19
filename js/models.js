@@ -160,7 +160,8 @@ class User {
 
 		let { user } = response.data;
 
-		getAndShowStoriesOnStart()
+		$loginForm.hide()
+		$signupForm.hide()
 		return new User(
 			{
 				username: user.username,
