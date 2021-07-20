@@ -80,7 +80,7 @@ class StoryList {
 			method: 'POST',
 			data: { token, story: { title, author, url } }
 		});
-		getAndShowStoriesOnStart();
+		checkFavorites(user)
 		return res;
 	}
 	async deleteStory(user, storyId) {
@@ -90,7 +90,8 @@ class StoryList {
 			method: 'DELETE',
 			data: { token }
 		});
-		getAndShowStoriesOnStart();
+		await getAndShowStoriesOnStart()
+		checkFavorites(user)
 		return res;
 	}
 }
@@ -210,7 +211,7 @@ class User {
 			method = 'DElETE';
 			removeFavortie(storyId);
 		} else {
-			$('#all-stories-list').find(`#${storyId}`).find('.fa').addClass('checked');
+			$('#all-stories-list').find(`#${storyId}`).find('.fa-star').addClass('checked');
 		}
 
 		const token = currentUser.loginToken;

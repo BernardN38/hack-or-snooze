@@ -70,12 +70,12 @@ function makeFavorite(event) {
 }
 
 function removeFavortie(storyId) {
-	$('#all-stories-list').find(`#${storyId}`).find('.fa').removeClass('checked');
+	$('#all-stories-list').find(`#${storyId}`).find('.fa-trash').removeClass('checked');
 }
 
 function checkFavorites(user) {
 	user.favorites.map((el, idx) => {
-		$('#all-stories-list').find(`#${el.storyId}`).find('.fa').addClass('checked');
+		$('#all-stories-list').find(`#${el.storyId}`).find('.fa-star').addClass('checked');
 	});
 }
 

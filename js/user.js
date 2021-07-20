@@ -111,5 +111,5 @@ function updateUIOnUserLogin() {
 	console.debug('updateUIOnUserLogin');
 	$allStoriesList.show();
 	updateNavOnLogin();
-  checkFavorites(currentUser);
+  	checkFavorites(currentUser);
 }
